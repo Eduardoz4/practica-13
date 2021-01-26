@@ -1,0 +1,38 @@
+// practica 13
+// Fecha de entrega 25/01/2021      Morales Salinas Eduardo
+#include<stdio.h>
+int main(){
+	int p=1,c;
+    char nombre [60];
+	char animal[20];
+	char color[30];
+	char estatura[10];
+	char numeroC[10];
+	while(p==1){
+	FILE *archivo;
+	archivo= fopen("practica13.txt", "w+" );
+	printf("¿Cual es tu nombre?  \n \n");
+	scanf("%s",nombre);
+    printf("¿Cual es tu animal favorito? \n \n ");
+    scanf("%s",animal);
+    printf("¿cual es tu color favorito? \n \n");
+    scanf("%s",color);
+    printf("¿cuanto mides? (ingresa la estatura en cm) \n \n");
+    scanf("%s", estatura);
+    printf("¿Cual es tu edad ? \n \n");
+    scanf("%s",numeroC);
+    printf("Deseas realizar otro registro? \n \n");
+    printf("ingresa 1 para si y 0 para no \n \n");
+    scanf("%i",&p);
+    c=c+1;
+    printf("En total llevas %i registros \n \n",c);  
+    if (archivo != NULL){
+    	printf("Revisa el archivo \n \n");
+    	fputs( nombre,archivo );
+        fputs(animal,archivo);
+        fputs(color,archivo);
+        fputs(estatura,archivo);
+        fputs(numeroC,archivo);
+    	fclose(archivo);
+	}
+}
